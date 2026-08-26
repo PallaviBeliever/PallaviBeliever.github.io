@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pallavi Priyanka</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F8F6F2;
+    --text: #1C1826;
+    --text-2: #56506A;
+    --text-3: #9490A4;
+    --accent: #8A1C3C;
+    --company: #14356B;
+    --rule: #DDD8D2;
+    --tag-bg: #EDE9E3;
+    --tag-text: #3A3450;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #13111C; --text: #EDE8F5; --text-2: #9993AA; --text-3: #6A6478;
+      --accent: #D4607A; --company: #7AAEDE; --rule: #2A2538;
+      --tag-bg: #1E1B2A; --tag-text: #C8C2D8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #13111C; --text: #EDE8F5; --text-2: #9993AA; --text-3: #6A6478;
+    --accent: #D4607A; --company: #7AAEDE; --rule: #2A2538;
+    --tag-bg: #1E1B2A; --tag-text: #C8C2D8;
+  }
+
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px; line-height: 1.55; color: var(--text);
+    background: var(--bg); max-width: 840px; margin: 0 auto; padding: 52px 52px 64px;
+  }
+
+  .header { text-align: center; margin-bottom: 28px; }
+  .name {
+    font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 400;
+    letter-spacing: 0.22em; color: var(--text); text-transform: uppercase; margin-bottom: 12px;
+  }
+  .name-rule { width: 64px; height: 1.5px; background: var(--accent); margin: 0 auto 14px; opacity: 0.6; }
+  .contact {
+    font-size: 11.5px; color: var(--text-2); display: flex; justify-content: center;
+    flex-wrap: wrap; gap: 6px 0; letter-spacing: 0.01em;
+  }
+  .contact-sep { color: var(--text-3); margin: 0 10px; font-weight: 300; }
+  .contact a { color: var(--text-2); text-decoration: none; }
+  .contact a:hover { color: var(--accent); }
+
+  .section { margin-bottom: 24px; }
+  .section-title {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); padding-bottom: 6px; border-bottom: 1px solid var(--rule); margin-bottom: 12px;
+  }
+
+  .summary { font-size: 12.5px; color: var(--text-2); line-height: 1.68; }
+
+  .job { margin-bottom: 20px; }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; margin-bottom: 1px; }
+  .company-name { font-size: 14px; font-weight: 700; color: var(--company); }
+  .job-title { font-size: 12.5px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .job-meta { font-size: 11px; color: var(--text-3); letter-spacing: 0.01em; margin-bottom: 7px; }
+  .job-intro { font-size: 12.5px; color: var(--text-2); font-style: italic; margin-bottom: 9px; line-height: 1.55; }
+  .project-title { font-size: 12px; font-weight: 600; color: var(--text); margin: 10px 0 5px; }
+
+  ul { padding-left: 0; list-style: none; }
+  ul li { position: relative; padding-left: 14px; margin-bottom: 4px; font-size: 12.5px; color: var(--text); line-height: 1.52; }
+  ul li::before { content: '–'; position: absolute; left: 0; color: var(--text-3); font-weight: 300; }
+  strong { font-weight: 600; }
+
+  .edu-grid { display: flex; flex-direction: column; gap: 6px; }
+  .edu-item { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+  .edu-left { display: flex; flex-direction: column; gap: 1px; }
+  .edu-degree { font-size: 12.5px; font-weight: 600; color: var(--text); }
+  .edu-detail { font-size: 11.5px; color: var(--text-2); }
+  .edu-meta { font-size: 11px; color: var(--text-3); white-space: nowrap; text-align: right; }
+
+  .cert-grid { display: flex; flex-direction: column; gap: 6px; }
+  .cert-item { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+  .cert-name { font-size: 12.5px; font-weight: 500; color: var(--text); }
+  .cert-issuer { font-size: 11.5px; color: var(--text-2); margin-left: 6px; }
+  .cert-year { font-size: 11px; color: var(--text-3); }
+
+  .skill-rows { display: flex; flex-direction: column; gap: 8px; }
+  .skill-row { display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .skill-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); min-width: 136px; padding-top: 3px; flex-shrink: 0;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; }
+  .tag {
+    background: var(--tag-bg); color: var(--tag-text); font-size: 11px;
+    padding: 2px 8px 3px; border-radius: 2px; white-space: nowrap; letter-spacing: 0.01em;
+  }
+
+  @media print {
+    *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    html, body { margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; background: white !important; }
+    body { font-size: 9.0pt !important; line-height: 1.47 !important; }
+    .header { margin-bottom: 20px; }
+    .name { font-size: 26px; margin-bottom: 10px; }
+    .contact { font-size: 10px; }
+    .section { margin-bottom: 18px; }
+    .section-title { font-size: 8px; margin-bottom: 10px; padding-bottom: 5px; break-after: avoid; }
+    .summary { font-size: 9.0pt; line-height: 1.47; }
+    .job { margin-bottom: 14px; }
+    .company-name { font-size: 12.5px; }
+    .job-title { font-size: 11px; }
+    .job-meta { font-size: 10px; margin-bottom: 6px; }
+    .job-intro { font-size: 9.0pt; margin-bottom: 7px; }
+    .project-title { font-size: 11px; margin: 8px 0 4px; break-after: avoid; }
+    ul li { font-size: 9.0pt; margin-bottom: 3px; line-height: 1.47; padding-left: 12px; }
+    .edu-item { break-inside: avoid; }
+    .cert-item { break-inside: avoid; }
+    .skill-row { break-inside: avoid; }
+    .edu-grid { gap: 6px; }
+    .edu-degree { font-size: 11px; }
+    .edu-detail { font-size: 10px; }
+    .edu-meta { font-size: 10px; }
+    .cert-grid { gap: 6px; }
+    .cert-name { font-size: 11px; }
+    .cert-year { font-size: 10px; }
+    .skill-rows { gap: 7px; }
+    .skill-label { font-size: 8px; min-width: 110px; }
+    .tag { font-size: 10px; padding: 2px 7px 2px; }
+    @page { margin: 7mm 9mm; size: A4; }
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 28px 20px; }
+    .skill-label { min-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1 class="name">Pallavi Priyanka</h1>
+  <div class="name-rule"></div>
+  <div class="contact">
+    <span>+91 9968234499</span>
+    <span class="contact-sep">·</span>
+    <a href="mailto:pallavipriyanka.gosain@gmail.com">pallavipriyanka.gosain@gmail.com</a>
+    <span class="contact-sep">·</span>
+    <a href="#">LinkedIn</a>
+    <span class="contact-sep">·</span>
+    <span>Delhi-NCR, India</span>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-title">Professional Summary</div>
+  <p class="summary">
+    Product Analyst with 5+ years of experience spanning product requirements development, technology project delivery, market readiness evaluation, and cross-functional implementation in global financial services and enterprise technology. Proven ability to serve as SME on product customisation, document new products and process changes, and coordinate smooth business implementation during launch — backed by an MBA (91%) and a technical foundation in SQL, Python, data analytics, and BI dashboards.
+  </p>
+</section>
+
+<section class="section">
+  <div class="section-title">Work Experience</div>
+
+  <div class="job">
+    <div class="job-header"><span class="company-name">Goldman Sachs</span></div>
+    <div class="job-title">Associate – Product Management &amp; Analytics Implementation</div>
+    <div class="job-meta">Bangalore &nbsp;·&nbsp; July 2025 – Present &nbsp;·&nbsp; Full-time</div>
+    <p class="job-intro">
+      Supporting product-level compliance operations, analytics solution delivery, and cross-functional implementation across global wealth platforms — bridging Product, Technology, Legal, and Operations stakeholders to drive controlled, documented product change.
+    </p>
+
+    <div class="project-title">Product Implementation &amp; Market Readiness</div>
+    <ul>
+      <li><strong>Served as SME on product-level regulatory controls</strong> across 30 EEA countries — evaluating product configurations, conducting readiness assessments before implementation, and coordinating product changes across Legal, Compliance, Technology, and Operations teams.</li>
+      <li><strong>Led end-to-end delivery of an AI-enabled analytics product</strong> — defined requirements, coordinated build with technology teams, managed testing and validation phases, and launched the solution to senior stakeholders, eliminating manual reporting workflows and improving data accuracy.</li>
+      <li><strong>Documented new products and changes to existing products</strong> — maintained accurate records of product configurations, operating procedures, and compliance requirements through multiple change cycles, ensuring smooth business implementation during launch.</li>
+      <li>Participated in <strong>cross-functional technology project teams</strong> to resolve business issues with significant product impact — managing delivery across Legal, Compliance, Product, Engineering, and Operations stakeholders for programmes governing $2.6B+ in regulated assets.</li>
+      <li><strong>Assessed risk on product decisions</strong> in line with firm policy — evaluating regulatory implications of proposed changes, escalating control issues with transparency, and ensuring adherence to applicable laws and guidelines with clear written documentation.</li>
+    </ul>
+
+    <div class="project-title">Product Analytics – Risk-Based Revenue Recovery</div>
+    <ul>
+      <li>Built <strong>analytical frameworks to segment 16,000+ client accounts</strong> by risk profile and financial impact — product-level analytics directly informing remediation strategy and driving <strong>$442K+ revenue recovery</strong> for a single institutional client.</li>
+      <li>Developed automated <strong>BI dashboards and product performance reports</strong> for senior management review, translating large operational datasets into structured product insights and trend indicators.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header"><span class="company-name">Birlasoft</span></div>
+    <div class="job-title">Senior Consultant – Product Customisation &amp; Delivery</div>
+    <div class="job-meta">Noida &nbsp;·&nbsp; June 2022 – July 2025 &nbsp;·&nbsp; Full-time</div>
+    <p class="job-intro">
+      Led SAP S/4HANA product customisation and delivery for manufacturing accounts — acting as functional SME on requirements, technology projects, testing phases, and go-live implementation while managing product documentation and client-facing communications throughout the product life cycle.
+    </p>
+
+    <div class="project-title">Product Requirements &amp; Customisation (SAP S/4HANA)</div>
+    <ul>
+      <li><strong>Served as SME on product customisation projects</strong> — gathering detailed product requirements, translating complex client business needs into functional product specifications, and influencing design decisions through advice and counsel to technology and functional teams.</li>
+      <li><strong>Participated in cross-functional technology project teams</strong> to resolve business issues with significant product impact — coordinating across Sales, Finance, Technology, and Operations to drive milestone delivery and resolve product-level blockers.</li>
+      <li>Conducted <strong>market readiness evaluations during UAT testing phases</strong> — developing test scenarios, coordinating defect resolution, and validating product quality and performance against business requirements before go-live sign-off.</li>
+      <li><strong>Documented new product configurations and changes to existing modules</strong> — maintaining requirements traceability matrices, change records, and implementation artefacts to ensure accurate product documentation through launch and post-go-live.</li>
+    </ul>
+
+    <div class="project-title">Product Life Cycle Management &amp; Analytics</div>
+    <ul>
+      <li><strong>Managed product delivery life cycle</strong> across multiple simultaneous engagements — developing plans, tracking schedules, coordinating resources, and communicating product status and risks to client steering committees and senior stakeholders.</li>
+      <li>Built <strong>automated product reporting and BI dashboard solutions</strong> using data pipelines and Excel-based analytical models — replacing manual processes, improving product performance visibility, and supporting data-backed management decisions.</li>
+      <li><strong>Analysed market demands and technology trends</strong> to inform product improvement recommendations for manufacturing clients — providing competitive and operational context to guide product roadmap decisions.</li>
+      <li>Guided and mentored junior team members on product documentation standards, requirements best practices, and delivery governance — ensuring consistent output quality and knowledge transfer across the team.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header"><span class="company-name">SS Media &amp; Communications</span></div>
+    <div class="job-title">Business Associate</div>
+    <div class="job-meta">New Delhi &nbsp;·&nbsp; Feb 2019 – Aug 2020 &nbsp;·&nbsp; Full-time</div>
+    <ul>
+      <li>Developed and delivered <strong>operational performance reports and KPI dashboards</strong> tracking product campaign metrics and business indicators for management review on a daily and monthly cadence.</li>
+      <li>Assessed market demands and competitor positioning to inform product strategy discussions — maintaining competitive intelligence across client sectors.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Education</div>
+  <div class="edu-grid">
+    <div class="edu-item">
+      <div class="edu-left">
+        <span class="edu-degree">MBA – Marketing &amp; Information Technology</span>
+        <span class="edu-detail">Delhi Technology University &nbsp;·&nbsp; <strong>91% · First Class with Distinction</strong></span>
+      </div>
+      <span class="edu-meta">2020 – 2022</span>
+    </div>
+    <div class="edu-item">
+      <div class="edu-left">
+        <span class="edu-degree">B.Tech – Electrical &amp; Electronics Engineering</span>
+        <span class="edu-detail">GGSIPU</span>
+      </div>
+      <span class="edu-meta">2014 – 2018 &nbsp;·&nbsp; 74%</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Certifications</div>
+  <div class="cert-grid">
+    <div class="cert-item">
+      <span><span class="cert-name">BCG Introduction to Strategy Consulting</span><span class="cert-issuer">Forage</span></span>
+      <span class="cert-year">2025</span>
+    </div>
+    <div class="cert-item">
+      <span><span class="cert-name">Foundations of Project Management</span><span class="cert-issuer">Google</span></span>
+      <span class="cert-year">2024</span>
+    </div>
+    <div class="cert-item">
+      <span><span class="cert-name">Introduction to Generative AI</span><span class="cert-issuer">Google Cloud</span></span>
+      <span class="cert-year">2023</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Skills</div>
+  <div class="skill-rows">
+
+    <div class="skill-row">
+      <span class="skill-label">Product</span>
+      <div class="skill-tags">
+        <span class="tag">Product Requirements</span>
+        <span class="tag">Market Readiness Evaluation</span>
+        <span class="tag">Product Documentation</span>
+        <span class="tag">Life Cycle Management</span>
+        <span class="tag">SME – Product Customisation</span>
+        <span class="tag">Product Launch</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <span class="skill-label">Analytics &amp; Data</span>
+      <div class="skill-tags">
+        <span class="tag">SQL</span>
+        <span class="tag">Python</span>
+        <span class="tag">Excel (Advanced)</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">BI Dashboards</span>
+        <span class="tag">Data Visualisation</span>
+        <span class="tag">Statistical Analysis</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <span class="skill-label">Delivery</span>
+      <div class="skill-tags">
+        <span class="tag">Cross-Functional Project Management</span>
+        <span class="tag">UAT Coordination</span>
+        <span class="tag">Status Reporting</span>
+        <span class="tag">Stakeholder Management</span>
+        <span class="tag">Risk Assessment</span>
+        <span class="tag">Compliance</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <span class="skill-label">Tools</span>
+      <div class="skill-tags">
+        <span class="tag">SAP S/4HANA</span>
+        <span class="tag">ServiceNow</span>
+        <span class="tag">Smartsheet</span>
+        <span class="tag">Confluence</span>
+        <span class="tag">PowerPoint</span>
+        <span class="tag">Microsoft Project</span>
+        <span class="tag">Visio</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
