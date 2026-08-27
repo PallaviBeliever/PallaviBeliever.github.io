@@ -127,9 +127,9 @@ nav.scrolled { border-color: #F0D8CE; }
 }
 .hero-photo:hover { transform: scale(1.04); }
 .hp-1 { background-image: url('images/jaipur-dance.jpg'); grid-row: 1 / 3; }
-.hp-2 { background-image: url('images/my-muse.jpg'); }
+.hp-2 { background-image: url('images/vintage-books.webp'); }
 .hp-3 { background-image: url('images/old-buildings-1.jpg'); }
-.hp-4 { background-image: url('images/vintage-books.webp'); grid-column: 1 / 3; }
+.hp-4 { background-image: url('images/my-muse.jpg'); grid-column: 1 / 3; }
 
 /* ─── Section base ─── */
 .section-wrap {
@@ -360,6 +360,16 @@ footer {
 .f-copy {
   max-width: 1400px; margin: 0 auto;
   font-size: 12px; color: rgba(253,250,245,0.3); letter-spacing: 0.05em;
+}
+.f-contact-aside {
+  padding-top: 8px;
+}
+.f-aside-label {
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(253,250,245,0.35); margin-bottom: 6px;
+}
+.f-aside-val {
+  font-size: 15px; color: rgba(253,250,245,0.75);
 }
 
 /* ─── Divider ─── */
@@ -723,21 +733,39 @@ footer {
   <div class="footer-inner">
     <div>
       <div class="f-name">Pallavi Priyanka</div>
-      <div class="f-sub">Delhi-NCR · Open to opportunities</div>
+      <div class="f-sub">Product Manager · Strategist · Storyteller</div>
       <div class="f-links">
+        <a href="https://www.linkedin.com/in/pallavi-priyanka/" target="_blank" rel="noopener" class="f-link">
+          <div class="f-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          linkedin.com/in/pallavi-priyanka
+        </a>
         <a href="mailto:pallavipriyanka.gosain@gmail.com" class="f-link">
-          <div class="f-icon">✉</div>
+          <div class="f-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          </div>
           pallavipriyanka.gosain@gmail.com
         </a>
         <a href="https://www.instagram.com/pallavi_p_clicks/" target="_blank" rel="noopener" class="f-link">
-          <div class="f-icon">📷</div>
+          <div class="f-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </div>
           @pallavi_p_clicks
         </a>
         <a href="https://www.instagram.com/dheemi_gati/" target="_blank" rel="noopener" class="f-link">
-          <div class="f-icon">🛡</div>
+          <div class="f-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </div>
           @dheemi_gati
         </a>
       </div>
+    </div>
+    <div class="f-contact-aside">
+      <div class="f-aside-label">Location</div>
+      <div class="f-aside-val">Delhi-NCR, India</div>
+      <div class="f-aside-label" style="margin-top:28px;">Status</div>
+      <div class="f-aside-val" style="color: #78C89A;">Open to opportunities</div>
     </div>
   </div>
   <hr class="f-divider">
