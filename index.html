@@ -245,6 +245,7 @@ nav.scrolled { border-color: #F0D8CE; }
 .cb-travel { background: rgba(201,122,26,0.2); color: #F0C070; border: 1px solid rgba(201,122,26,0.4); }
 .cb-photo  { background: rgba(61,122,92,0.2); color: #80D4A8; border: 1px solid rgba(61,122,92,0.4); }
 .cb-cause  { background: rgba(122,61,107,0.2); color: #D4A0C8; border: 1px solid rgba(122,61,107,0.4); }
+.cb-books  { background: rgba(160,100,30,0.2); color: #E8C88A; border: 1px solid rgba(160,100,30,0.4); }
 .c-title {
   font-family: Georgia, serif; font-size: 32px; font-weight: 400;
   color: #FDFAF5; line-height: 1.15; margin-bottom: 12px;
@@ -284,6 +285,62 @@ nav.scrolled { border-color: #F0D8CE; }
 .pg-4 { background-image: url('images/old-buildings-1.jpg'); }
 .pg-5 { background-image: url('images/old-buildings-2.jpg'); }
 .pg-6 { background-image: url('images/vintage-books.webp'); }
+
+/* ─── READING ─── */
+#reading {
+  display: grid; grid-template-columns: 55fr 45fr;
+  min-height: 620px; background: #0E0906;
+}
+.reading-left {
+  padding: 100px 80px; display: flex; flex-direction: column;
+  justify-content: center; position: relative; overflow: hidden;
+}
+.reading-deco {
+  position: absolute; font-family: Georgia, serif; font-size: 380px;
+  font-style: italic; font-weight: 400; line-height: 1;
+  color: rgba(232,200,138,0.045); top: 50%; right: -20px;
+  transform: translateY(-50%); pointer-events: none; user-select: none;
+}
+.reading-tag {
+  font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: #E8C88A; margin-bottom: 32px;
+  display: flex; align-items: center; gap: 12px;
+}
+.reading-tag::before { content: ''; width: 32px; height: 1px; background: #E8C88A; }
+.reading-heading {
+  font-family: Georgia, serif; font-size: clamp(44px, 4vw, 68px);
+  font-weight: 400; line-height: 1.05; letter-spacing: -0.02em;
+  color: #F5EDD8; margin-bottom: 36px;
+}
+.reading-body {
+  font-size: 16px; color: rgba(245,237,216,0.58); line-height: 1.8;
+  max-width: 480px; margin-bottom: 20px;
+}
+.reading-body strong { color: rgba(245,237,216,0.88); font-weight: 500; }
+.reading-shelf {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px;
+}
+.r-book {
+  padding: 7px 18px; border-radius: 4px;
+  font-size: 11px; letter-spacing: 0.07em;
+  background: rgba(232,200,138,0.07); color: rgba(232,200,138,0.8);
+  border: 1px solid rgba(232,200,138,0.18);
+}
+.r-book.rb-hp  { background: rgba(160,100,20,0.18); color: #F0C870; border-color: rgba(160,100,20,0.4); }
+.r-book.rb-rb  { background: rgba(61,122,92,0.14); color: #88C8A8; border-color: rgba(61,122,92,0.35); }
+.reading-right {
+  position: relative; overflow: hidden;
+}
+.reading-right::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to right, #0E0906 0%, rgba(14,9,6,0.3) 40%, transparent 70%);
+}
+.reading-right-img {
+  position: absolute; inset: 0;
+  background: url('images/vintage-books.webp') center/cover no-repeat;
+  transition: transform 0.8s ease;
+}
+#reading:hover .reading-right-img { transform: scale(1.04); }
 
 /* Cause card */
 .cause-bg {
@@ -397,6 +454,9 @@ footer {
   .about-layout { grid-template-columns: 1fr; }
   .creative-full { grid-template-columns: 1fr; }
   .c-card { min-height: 400px; }
+  #reading { grid-template-columns: 1fr; }
+  .reading-right { height: 340px; }
+  .reading-left { padding: 72px 40px; }
   .skills-full { grid-template-columns: 1fr 1fr; }
   .skill-col:nth-child(2) { border-right: none; }
   .skill-col:nth-child(3) { border-top: 1px solid var(--border); }
@@ -583,7 +643,6 @@ footer {
           </div>
           <div>
             <div class="edu-yr">2020 – 2022</div>
-            <div class="edu-badge">91% · First Class with Distinction</div>
           </div>
         </div>
         <div class="edu-row reveal reveal-delay-2">
@@ -607,9 +666,9 @@ footer {
   <div class="section-wrap" style="padding-bottom: 0;">
     <div class="section-inner">
       <div class="s-tag reveal">Beyond Work</div>
-      <h2 class="s-heading reveal reveal-delay-1">The three things I care deeply about.</h2>
+      <h2 class="s-heading reveal reveal-delay-1">The things I care deeply about.</h2>
       <p class="s-sub reveal reveal-delay-2">
-        Always moving — across borders, through a viewfinder, and toward a cause worth fighting for.
+        Always moving — across borders, through a viewfinder, toward a cause worth fighting for, and always with a book in hand.
       </p>
     </div>
   </div>
@@ -667,6 +726,32 @@ footer {
       </div>
     </a>
 
+
+  </div>
+</section>
+
+<!-- ─── READING ─── -->
+<section id="reading">
+  <div class="reading-left reveal">
+    <div class="reading-deco">"</div>
+    <div class="reading-tag">Off the Clock</div>
+    <h2 class="reading-heading">A Life<br>in Stories.</h2>
+    <p class="reading-body">
+      <strong>Harry Potter</strong> — cover to cover, at least three times over. Not because I forgot the plot, but because Rowling built a world that rewards every reread. <strong>Ruskin Bond</strong> taught me something quieter: that the best stories live in the unhurried hills, the smell of pine after rain, the chai stall conversation nobody thought to write down.
+    </p>
+    <p class="reading-body">
+      Off the page, I'm three episodes into a British psychological thriller I promised myself I'd pace through slowly. I never do.
+    </p>
+    <div class="reading-shelf">
+      <span class="r-book rb-hp">Harry Potter Series</span>
+      <span class="r-book rb-rb">Ruskin Bond</span>
+      <span class="r-book">British Crime Drama</span>
+      <span class="r-book">Psychological Thrillers</span>
+      <span class="r-book">BBC Shows</span>
+    </div>
+  </div>
+  <div class="reading-right">
+    <div class="reading-right-img"></div>
   </div>
 </section>
 
